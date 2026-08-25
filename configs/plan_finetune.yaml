@@ -1,0 +1,38 @@
+SEED: 0
+TRAIN:
+  batch_size: 16
+  epochs: 100
+  num_workers: 16
+  input_track_size: 9
+  output_track_size: 12
+  lr: "1e-5"
+  lr_decay: 1
+  lr_drop: true
+  val_frequency: 5
+  optimizer: adam
+  max_grad_norm: 1.0
+  col_weight: 10.0
+DATA:
+  train_datasets:
+    - jrdb_2dbox
+MODEL:
+  seq_len: 30
+  token_num: 2
+  num_layers_local: 6
+  num_layers_global: 3
+  num_heads: 4
+  dim_hidden: 128
+  dim_feedforward: 1024
+  type: transmotion
+  checkpoint: ""
+  pretrained: checkpoints/pretrained_model.pth.tar
+  output_scale: 1
+  task: ego
+EVAL:
+  col_threshold: 0.6
+  miss_threshold: 0.5
+  val_loss_weight_ego: 1.0
+  val_loss_weight_neigh: 0.0
+  val_loss_weight_col: 0.1
+OUTPUT:
+  base_dir: outputs

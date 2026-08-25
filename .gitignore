@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.log
+.DS_Store
+outputs/
+results/evaluation/
+*.egg-info/
+.pytest_cache/
+
+# Checkpoints are distributed as GitHub Release assets.
+checkpoints/*.pt
+checkpoints/*.pth
+checkpoints/*.pth.tar
+checkpoints/*.part
+
+# Local handoff note for the deployment server.
+RELEASE_CHECKLIST.md

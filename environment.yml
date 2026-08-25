@@ -1,0 +1,14 @@
+name: social
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu128
+      - torch==2.8.0
+      - numpy==1.26.4
+      - PyYAML==6.0.2
+      - progress==1.6.1
+      - tensorboard==2.19.0

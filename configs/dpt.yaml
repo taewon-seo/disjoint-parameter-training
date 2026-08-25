@@ -1,0 +1,40 @@
+SEED: 0
+TRAIN:
+  batch_size: 64
+  num_workers: 16
+  input_track_size: 9
+  output_track_size: 12
+  lr_planner: "5e-6"
+  lr_forecaster: "2e-6"
+  optimizer: adam
+  momentum: 0.9
+  max_grad_norm: 1.0
+  col_weight: 0.0
+DATA:
+  train_datasets:
+    - jrdb_2dbox
+MODEL:
+  seq_len: 30
+  token_num: 2
+  num_layers_local: 6
+  num_layers_global: 3
+  num_heads: 4
+  dim_hidden: 128
+  dim_feedforward: 1024
+  type: transmotion
+  pretrained: checkpoints/pretrained_model.pth.tar
+  output_scale: 1
+EVAL:
+  col_threshold: 0.6
+  miss_threshold: 0.5
+  val_loss_weight_ego: 1.0
+  val_loss_weight_neigh: 1.0
+  val_loss_weight_col: 0.0
+DISJOINT:
+  epoch_allocation: 50
+  epoch_train: 50
+  planner_allocation: 0.5
+  forecaster_allocation: 0.5
+  preemption: planner
+OUTPUT:
+  base_dir: outputs

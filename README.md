@@ -145,6 +145,9 @@ pretraining and standard task fine-tuning.
 The unified backbone is based on
 [Social-Transmotion](https://github.com/vita-epfl/social-transmotion).
 
+Research supported by the
+[NVIDIA Academic Grant Program](https://www.nvidia.com/en-us/industries/higher-education-research/academic-grant-program/).
+
 ## License
 
 The source code is released under the
